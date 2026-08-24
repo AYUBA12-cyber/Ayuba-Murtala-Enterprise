@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ayuba Murtala Enterprise - POS Service and Community Health Service. Reliable service. Trusted care.">
+  <title>Ayuba Murtala Enterprise | POS & Community Health</title>
+  <style>
+    :root{
+      --navy:#102a56;
+      --green:#278044;
+      --light:#f5f8f6;
+      --text:#17202a;
+      --muted:#5d6875;
+      --white:#fff;
+      --shadow:0 12px 35px rgba(16,42,86,.10);
+      --radius:20px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e8ecea}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy)}
+    .brand img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:2px solid var(--green)}
+    .brand span{font-size:1rem;line-height:1.1}
+    nav{display:flex;gap:26px;align-items:center}
+    nav a{font-weight:700;color:#26364b}
+    nav a:hover{color:var(--green)}
+    .menu{display:none;border:0;background:none;font-size:1.7rem;color:var(--navy)}
+    .hero{background:linear-gradient(135deg,#f2f7f4 0%,#fff 58%,#edf5ef 100%);padding:76px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-block;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1.6px;font-size:.82rem;margin-bottom:15px}
+    h1{font-size:clamp(2.4rem,5vw,4.7rem);line-height:1.04;color:var(--navy);margin-bottom:20px}
+    h1 span{color:var(--green)}
+    .hero p{font-size:1.13rem;color:var(--muted);max-width:620px;margin-bottom:28px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{padding:14px 21px;border-radius:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;transition:.2s}
+    .btn-primary{background:var(--navy);color:white}
+    .btn-primary:hover{transform:translateY(-2px);background:#0a2148}
+    .btn-secondary{background:var(--green);color:white}
+    .btn-secondary:hover{transform:translateY(-2px);background:#1e6e39}
+    .hero-card{background:#fff;padding:16px;border-radius:28px;box-shadow:var(--shadow);border:1px solid #e7ece9}
+    .hero-card img{width:100%;border-radius:20px}
+    section{padding:78px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(1.9rem,4vw,3rem);color:var(--navy);margin-bottom:10px}
+    .section-head p{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+    .card{padding:32px;border-radius:var(--radius);background:#fff;border:1px solid #e5ebe7;box-shadow:var(--shadow)}
+    .icon{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:#eaf5ed;font-size:2rem;margin-bottom:20px}
+    .card h3{font-size:1.45rem;color:var(--navy);margin-bottom:10px}
+    .card p{color:var(--muted)}
+    .card ul{margin:17px 0 0 20px;color:var(--muted)}
+    .card li{margin:7px 0}
+    .why{background:var(--light)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+    .why-panel{background:#fff;border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+    .why-panel h3{color:var(--navy);font-size:1.7rem;margin-bottom:15px}
+    .checks{display:grid;gap:16px;margin-top:22px}
+    .check{display:flex;gap:13px;align-items:flex-start}
+    .check b{color:var(--green);font-size:1.25rem}
+    .check span{color:var(--muted)}
+    .cta{background:var(--navy);color:#fff;text-align:center;padding:68px 0}
+    .cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:12px}
+    .cta p{color:#dbe5f2;max-width:680px;margin:0 auto 24px}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .contact{padding:25px;border:1px solid #e5ebe7;border-radius:16px;background:#fff}
+    .contact strong{display:block;color:var(--navy);margin-bottom:6px}
+    .contact span{color:var(--muted)}
+    footer{background:#091d3d;color:#d8e1ed;padding:28px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+    .footer-row strong{color:#fff}
+    .small{font-size:.9rem;color:#aebed0}
+    @media(max-width:800px){
+      nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px 4%;border-bottom:1px solid #e8ecea;flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}
+      .menu{display:block}
+      .hero-grid,.why-grid{grid-template-columns:1fr}
+      .hero{padding-top:48px}
+      .cards,.contact-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <img src="business-logo.png" alt="Ayuba Murtala Enterprise logo">
+      <span>AYUBA MURTALA<br>ENTERPRISE</span>
+    </a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Reliable Service • Trusted Care</div>
+        <h1>Serving You Better, <span>Everyday.</span></h1>
+        <p>
+          Welcome to Ayuba Murtala Enterprise. We provide convenient POS services
+          and community-focused health support designed to make everyday services
+          easier and more accessible.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#services">Explore Services</a>
+          <a class="btn btn-secondary" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="business-logo.png" alt="Ayuba Murtala Enterprise">
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Services</h2>
+        <p>Practical services built around convenience, trust and community wellbeing.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">💳</div>
+          <h3>POS Service</h3>
+          <p>Fast, secure and reliable everyday financial transaction support.</p>
+          <ul>
+            <li>Cash withdrawal and deposit support</li>
+            <li>Transfers and other POS transactions</li>
+            <li>Convenient community access</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">💚</div>
+          <h3>Community Health Service</h3>
+          <p>Community-focused health support, education and guidance with an emphasis on safe care.</p>
+          <ul>
+            <li>Basic health education and awareness</li>
+            <li>Health promotion and prevention guidance</li>
+            <li>Support with appropriate referral when needed</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="about">
+    <div class="container why-grid">
+      <div>
+        <div class="eyebrow">About Us</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);color:var(--navy);margin-bottom:15px">
+          One enterprise. Two ways to serve the community.
+        </h2>
+        <p style="color:var(--muted);font-size:1.05rem">
+          Ayuba Murtala Enterprise is focused on delivering useful local services
+          with respect, reliability and a strong commitment to the people we serve.
+        </p>
+      </div>
+      <div class="why-panel">
+        <h3>Why choose us?</h3>
+        <div class="checks">
+          <div class="check"><b>✓</b><span><strong>Reliable:</strong> We aim to make every service simple and dependable.</span></div>
+          <div class="check"><b>✓</b><span><strong>Community-focused:</strong> We understand the needs of the people around us.</span></div>
+          <div class="check"><b>✓</b><span><strong>Convenient:</strong> Access important everyday services closer to home.</span></div>
+          <div class="check"><b>✓</b><span><strong>Trusted care:</strong> Health support is provided with safety and appropriate referral in mind.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Get in Touch</h2>
+        <p>Ready to use our services? Contact Ayuba Murtala Enterprise.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact">
+          <strong>📞 Phone</strong>
+          <span>Add your business phone number here</span>
+        </div>
+        <div class="contact">
+          <strong>📍 Location</strong>
+          <span>Add your business address or service area here</span>
+        </div>
+        <div class="contact">
+          <strong>💬 WhatsApp</strong>
+          <span>Add your WhatsApp number here</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Your Health, Our Priority.</h2>
+      <p>For POS convenience and community health support, Ayuba Murtala Enterprise is here to serve you.</p>
+      <a class="btn btn-secondary" href="#contact">Contact Us Today</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong>AYUBA MURTALA ENTERPRISE</strong><br><span class="small">Reliable Service. Trusted Care.</span></div>
+    <div class="small">© 2026 Ayuba Murtala Enterprise. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
